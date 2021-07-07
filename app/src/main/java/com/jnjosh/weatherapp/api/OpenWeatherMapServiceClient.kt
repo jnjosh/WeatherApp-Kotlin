@@ -1,4 +1,4 @@
-package com.jnjosh.weatherapp
+package com.jnjosh.weatherapp.api
 
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -11,12 +11,13 @@ interface OpenWeatherMapServiceClient {
         @Query("lat") latitude: String,
         @Query("lon") longitude: String,
         @Query("appid") apiKey: String,
-        @Query("units") units: String = "metric"): Observable<WeatherReport>
+        @Query("units") units: String = "imperial"): Observable<WeatherReport>
 
     @GET("/data/2.5/forecast")
     fun getForecast(
         @Query("lat") latitude: String,
         @Query("lon") longitude: String,
-        @Query("appid") apiKey: String): Observable<List<WeatherReport>>
+        @Query("appid") apiKey: String,
+        @Query("units") units: String = "imperial"): Observable<WeatherForecast>
 
 }

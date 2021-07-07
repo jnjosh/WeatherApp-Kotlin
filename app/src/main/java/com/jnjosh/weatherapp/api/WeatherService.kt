@@ -1,4 +1,4 @@
-package com.jnjosh.weatherapp
+package com.jnjosh.weatherapp.api
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import okhttp3.OkHttpClient
